@@ -39,6 +39,23 @@ color:aliceblue;
      </style>
      <script>
       localStorage.setItem("point",0);var o=Number(localStorage.getItem("point")),n=document.querySelector("div>p");document.querySelector("div.point-bar").textContent=o;var t=document.querySelector("button");t.addEventListener("mouseenter",e=>{e.button==2&&e.preventDefault();let l={x:e.clientX,y:e.clientY,xoff:e.movementX};console.log(l),t.style.left=`${3*e.offsetX}px`,t.style.top=`${3*e.offsetY}px`,(t.style.top<100||t.style.left<100)&&(t.style.left="100px",t.style.top="100px")});t.addEventListener("click",()=>{o=Number(localStorage.getItem("point")),localStorage.setItem("point",`${o+5}`),document.querySelector("div.point-bar").textContent=Number(localStorage.getItem("point"))});
+//mobile touch prevent
+       window.addEventListener("touchstart", (e)=>{
+        e.preventDefault();
+})
+
+window.addEventListener("touchend", (e)=>{
+    e.preventDefault();
+})
+
+window.addEventListener("touchmove", (e)=>{
+    e.preventDefault();
+})
+
+window.addEventListener("touchcancel", (e)=>{
+    e.preventDefault();
+})
+
 
      </script>
   </body>
